@@ -16,18 +16,17 @@ function prevenir(e){
     
         const precio = Number(inputPrecio.value);
         const porciento  = Number(inputPorciento.value);
-    
-        
 
         if (inputPrecio.value === "" || inputPorciento.value === "") {
             return porcientoTotal.innerHTML = `Por favor llene ambos campos`
         }
 
-        if (inputPorciento.value > inputPrecio.value) {
+        if (porciento > precio) {
             return porcientoTotal.innerHTML = `No te voy adar los productos gratis`
         }
 
         const calcularPorciento = Math.floor(precio - (precio * porciento / 100));
         return porcientoTotal.innerHTML = `El porciento es de %${calcularPorciento}`
+        
     }
 }
